@@ -1,0 +1,71 @@
+[
+    {
+        "numberOfQuestion": 1,
+        "question": "Podaj zmienną o typie liczbowym: ",
+        "answers": [
+            {
+                "Number": 1,
+                "Text": "int a;"
+            },
+            {
+                "Number": 2,
+                "Text": "integer b = 1;"
+            },
+            {
+                "Number": 3,
+                "Text": "liczba a = 25;"
+            },
+            {
+                "Number": 4,
+                "Text": "number a = 25;"
+            }
+        ],
+        "questionAnswerNumber": 1
+    },
+    {
+        "numberOfQuestion": 2,
+        "question": "Podaj zmienną o typie logicznym: ",
+        "answers": [
+            {
+                "Number": 1,
+                "Text": "int a;"
+            },
+            {
+                "Number": 2,
+                "Text": "bool b = true;"
+            },
+            {
+                "Number": 3,
+                "Text": "boolowska a = 1;"
+            },
+            {
+                "Number": 4,
+                "Text": "type a = 2;"
+            }
+        ],
+        "questionAnswerNumber": 2
+    },
+    {
+        "numberOfQuestion": 3,
+        "question": "Podaj zmienną łańcucha znakowego: ",
+        "answers": [
+            {
+                "Number": 1,
+                "Text": "int b = bebech;"
+            },
+            {
+                "Number": 2,
+                "Text": "nazwa b = marek;"
+            },
+            {
+                "Number": 3,
+                "Text": "napis a = 25;"
+            },
+            {
+                "Number": 4,
+                "Text": "string a = \"2\";"
+            }
+        ],
+        "questionAnswerNumber": 4
+    }
+]
