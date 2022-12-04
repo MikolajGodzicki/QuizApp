@@ -1,6 +1,4 @@
-﻿//#define _DEBUG_
-
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,33 +15,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuizApp
-{
-    /// <summary>
-    /// Logika interakcji dla klasy StartWindow.xaml
-    /// </summary>
-    public partial class StartWindow : Window
-    {
-        public static string FilePath = "";
-        public StartWindow()
-        {
-            InitializeComponent(); 
+namespace QuizApp {
+    public partial class StartWindow : Window {
+        private string FilePath = "";
+        public StartWindow() {
+            InitializeComponent();
         }
 
-        private void openQuizFileBtn_Click(object sender, RoutedEventArgs e)
-        {
+        private void openQuizFileBtn_Click(object sender, RoutedEventArgs e) {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.DefaultExt = ".json";
             openFileDialog.Filter = "Quiz file (.json)|*.json";
             
             bool? result = openFileDialog.ShowDialog(this);
 
-            if (result == true)
-            {
+            if (result == true) {
                 string filePath = openFileDialog.FileName;
-#if _DEBUG_
-                Debug.WriteLine(filePath);
-#endif
 
                 fileName.Text = filePath.Split('\\').Last();
 
@@ -51,15 +38,17 @@ namespace QuizApp
             }
         }
 
-        private void startQuizBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(FilePath))
-            {
+        private void startQuizBtn_Click(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(FilePath)) {
                 MessageBox.Show("Plik nie istnieje.");
                 return;
             }
 
-            MainWindow main = new MainWindow();
+            MainWindow main = new MainWindow(FilePath);
+            if (!main.IsValidFile) {
+                MessageBox.Show("Wybrano pusty/nieprawidłowy plik");
+                return;
+            }
             main.Show();
             this.Close();
         }

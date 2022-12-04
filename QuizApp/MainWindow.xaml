@@ -5,15 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Test sprawdzający wiadomości" Height="450" Width="800">
     <Grid Background="#FF16213E">
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
-        <Button
+        <TextBlock x:Name="QuestionLabel" 
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text="Pytanie" 
+            Foreground="White" 
+            FontSize="22" 
+            FontFamily="Fira Code SemiBold"/>
+
+        <ListBox
+            x:Name="answerList"
             Grid.Row="1"
+            Grid.Column="1"
+            Background="#FF16213E" 
+            Foreground="White" 
+            FontFamily="Fira Code Medium" 
+            FontSize="16"/>
+
+        <Button x:Name="nextQuestionBtn"
+            Grid.Row="2"
+            Grid.Column="1"
             Content="Następne pytanie"
             Width="220"
             Height="40"
@@ -21,6 +47,7 @@
             BorderThickness="0,0,0,0" 
             FontFamily="Fira Code Medium" 
             Foreground="White" 
-            FontSize="20" ></Button>
+            FontSize="20" 
+                Click="nextQuestionBtn_Click"/>
     </Grid>
 </Window>

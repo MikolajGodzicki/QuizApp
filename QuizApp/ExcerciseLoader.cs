@@ -9,35 +9,24 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace QuizApp
-{
-    internal class ExcerciseLoader
-    {
-        public List<Excercise> Load(string filePath)
-        {
+namespace QuizApp {
+    internal class ExcerciseLoader {
+        public List<Excercise>? Load(string filePath) {
             List<Excercise>? excersises;
 
             string fileContent = File.ReadAllText(filePath);
             excersises = JsonConvert.DeserializeObject<List<Excercise>>(fileContent);
-            
-            if (excersises == null)
-            {
-                return new List<Excercise>();
-            }
 
             return excersises;
         }
+
 #if _TEST_
-        public void Save(string filePath)
-        {
-            List<Excercise> excersises = new List<Excercise>()
-            {
-                new Excercise()
-                {
+        public void Save(string filePath) {
+            List<Excercise> excersises = new List<Excercise>() {
+                new Excercise() {
                     numberOfQuestion = 1,
                     question = "Podaj zmienną o typie liczbowym: ",
-                    answers =
-                    {
+                    answers = {
                         new Answer(1, "int a;"),
                         new Answer(2, "integer b = 1;"),
                         new Answer(3, "liczba a = 25;"),
@@ -45,12 +34,10 @@ namespace QuizApp
                     },
                     questionAnswerNumber = 1
                 },
-                new Excercise()
-                {
+                new Excercise() {
                     numberOfQuestion = 2,
                     question = "Podaj zmienną o typie napisowym: ",
-                    answers =
-                    {
+                    answers = {
                         new Answer(1, "int b;"),
                         new Answer(2, "nazwa b = marek;"),
                         new Answer(3, "napis a = 25;"),

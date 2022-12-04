@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuizApp
-{
+namespace QuizApp {
     [System.Serializable]
-    internal class Answer
-    {
+    internal class Answer {
         public int Number;
         public string Text;
 
-        public Answer(int number, string text)
-        {
+        public Answer(int number, string text) {
             Number = number;
             Text = text;
         }
